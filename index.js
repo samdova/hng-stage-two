@@ -16,6 +16,14 @@ app.get('/', (req, res) => {
   res.send('Welcome to HNG STAGE TWO TASK - User Authentication & Organisation');
 });
 
+app.get('*', (req, res) => {
+  res.status(404).json({
+    status: 'fail',
+    message: 'Error 404, route not fount'
+  });
+});
+
+
 
 // Routes
 app.use(authRoutes);
